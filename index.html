@@ -12,10 +12,6 @@
       --text-muted: #666666;
       --card-bg: #f7f7f7;
       --border: #dddddd;
-      --accent: #000000;
-      --solo: #000000;
-      --apoio: #555555;
-      --inst: #333333;
     }
 
     * {
@@ -88,9 +84,23 @@
       border-radius: 50%;
     }
 
-    .dot-solo { background: var(--solo); }
-    .dot-apoio { background: var(--apoio); }
-    .dot-inst { background: var(--inst); }
+    .dot-solo { background: #000; }
+    .dot-apoio { background: #666; }
+    .dot-inst { background: #333; }
+
+    /* Campo de filtro */
+    .filter-box {
+      margin-bottom: 20px;
+    }
+
+    .filter-box input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      background: #fafafa;
+    }
 
     .day-list {
       display: flex;
@@ -227,12 +237,17 @@
         <span class="legend-item"><span class="dot dot-apoio"></span> Apoio / Backing</span>
         <span class="legend-item"><span class="dot dot-inst"></span> Instrumental</span>
       </div>
+
+      <!-- CAMPO DE FILTRO -->
+      <div class="filter-box">
+        <input type="text" id="filterInput" placeholder="Filtrar por integrante (ex.: Isabella, Ronny, Igor)...">
+      </div>
     </header>
 
     <main class="day-list">
 
       <!-- 01/04/2026 - Santa Ceia -->
-      <details class="day-card">
+      <details class="day-card" data-members="a definir">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/04/2026</div>
@@ -255,7 +270,7 @@
       </details>
 
       <!-- 01/06/2026 - Profetizando 2026 -->
-      <details class="day-card" open>
+      <details class="day-card" data-members="nwohaynne sarah denise isabella lara cristiano ronny igor daniel washington márcio jonatan">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/06/2026</div>
@@ -298,7 +313,7 @@
       </details>
 
       <!-- 01/07/2026 - Profetizando 2026 -->
-      <details class="day-card">
+      <details class="day-card" data-members="sérgio isabella stefanea débora fabiana lara denise igor washington daniel jonatan">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/07/2026</div>
@@ -341,7 +356,7 @@
       </details>
 
       <!-- 01/08/2026 - Profetizando 2026 -->
-      <details class="day-card">
+      <details class="day-card" data-members="luciana ronny sérgio sarah débora isabella fabiana igor washington márcio jonatan">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/08/2026</div>
@@ -353,7 +368,7 @@
           <div class="culto-block">
             <div class="culto-header">
               <span class="culto-nome">Profetizando 2026</span>
-              <span class="culto-tag">Culto especial</span>
+              <span class="culto-tag">Encerramento</span>
             </div>
 
             <div class="role-group-label">Vocal (Solo)</div>
@@ -384,7 +399,7 @@
       </details>
 
       <!-- 01/11/2026 - Culto de Celebração -->
-      <details class="day-card">
+      <details class="day-card" data-members="isabella ronny sérgio cristiano fabiana washington jonatan">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/11/2026</div>
@@ -423,8 +438,8 @@
         </div>
       </details>
 
-      <!-- 01/13/2026 - EDP - Escola da Palavra -->
-      <details class="day-card">
+      <!-- 01/13/2026 - EDP -->
+      <details class="day-card" data-members="isabella luciana sarah cristiano lara márcio washington">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/13/2026</div>
@@ -465,7 +480,7 @@
       </details>
 
       <!-- 01/15/2026 - Culto da Vitória -->
-      <details class="day-card">
+      <details class="day-card" data-members="denise ronny isabella nwohaynne fabiana igor washington márcio">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/15/2026</div>
@@ -505,7 +520,7 @@
       </details>
 
       <!-- 01/18/2026 - Culto de Celebração -->
-      <details class="day-card">
+      <details class="day-card" data-members="denise luciana nwohaynne cristiano sérgio igor washington jonatan">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/18/2026</div>
@@ -528,7 +543,6 @@
 
             <div class="role-group-label">Vocal (Apoio)</div>
             <div class="pills-row">
-              <!-- Houve uma linha com ano 2025 na planilha, mantive o nome normalmente -->
               <span class="person-pill">Nwohaynne<br><small>Backing vocal</small></span>
               <span class="person-pill">Cristiano (Manhã)<br><small>Backing vocal</small></span>
               <span class="person-pill">Sérgio<br><small>Backing vocal</small></span>
@@ -545,8 +559,8 @@
         </div>
       </details>
 
-      <!-- 01/20/2026 - EDP - Escola da Palavra -->
-      <details class="day-card">
+      <!-- 01/20/2026 - EDP -->
+      <details class="day-card" data-members="ronny isabella sarah lara igor sérgio márcio">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/20/2026</div>
@@ -586,7 +600,7 @@
       </details>
 
       <!-- 01/22/2026 - Culto da Vitória -->
-      <details class="day-card">
+      <details class="day-card" data-members="denise ronny luciana fabiana igor washington márcio jonatan">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/22/2026</div>
@@ -625,7 +639,7 @@
       </details>
 
       <!-- 01/25/2026 - Culto de Celebração -->
-      <details class="day-card">
+      <details class="day-card" data-members="isabella ronny sérgio cristiano fabiana washington márcio jonatan">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/25/2026</div>
@@ -664,8 +678,8 @@
         </div>
       </details>
 
-      <!-- 01/27/2026 - EDP - Escola da Palavra -->
-      <details class="day-card">
+      <!-- 01/27/2026 - EDP -->
+      <details class="day-card" data-members="isabella ronny luciana fabiana sarah lara márcio sérgio washington">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/27/2026</div>
@@ -706,7 +720,7 @@
       </details>
 
       <!-- 01/29/2026 - Culto da Vitória -->
-      <details class="day-card">
+      <details class="day-card" data-members="luciana ronny nwohaynne fabiana igor washington márcio jonatan">
         <summary class="day-header">
           <div>
             <div class="day-date-main">01/29/2026</div>
@@ -750,5 +764,20 @@
       Caso encontre algum erro de nome ou data, atualize a planilha original e gere uma nova versão desta página.
     </p>
   </div>
+
+  <script>
+    const input = document.getElementById('filterInput');
+    const cards = document.querySelectorAll('.day-card');
+
+    input.addEventListener('input', () => {
+      const term = input.value.trim().toLowerCase();
+
+      cards.forEach(card => {
+        const members = card.getAttribute('data-members') || '';
+        const match = members.toLowerCase().includes(term);
+        card.style.display = term === '' || match ? '' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
